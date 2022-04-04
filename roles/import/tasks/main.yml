@@ -14,16 +14,10 @@
 - name: "Ejecutar query SQL"
   postgresql_query:
    db: "{{ nombre_bd }}"
-   #login_user: postgres
-   #login_password: postgres
    path_to_script: "{{ ruta_sql }}"
-   #positional_args:
-   #- 1
   become_user: postgres
 
 - name: "Borrar .sql del servidor"
   file:
     path: "{{ ruta_sql }}"
     state: absent
-  #become_user: postgres
-# tasks file for import
