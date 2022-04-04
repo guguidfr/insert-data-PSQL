@@ -1,0 +1,5 @@
+---
+nombre_bd: colegio
+from: /home/vagrant/SQL/insert.sql
+ruta_sql: /tmp/importar.sql
+# vars file for import

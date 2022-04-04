@@ -1,0 +1,29 @@
+---
+- name: "Crear la base de datos"
+  postgresql_db:
+    state: present
+    name: "{{ nombre_bd }}"
+  become: yes
+  become_user: postgres
+
+- name: "Llevar el .sql al servidor"
+  copy:
+    src: "{{ from }}" 
+    dest: "{{ ruta_sql }}"
+
+- name: "Ejecutar query SQL"
+  postgresql_query:
+   db: "{{ nombre_bd }}"
+   #login_user: postgres
+   #login_password: postgres
+   path_to_script: "{{ ruta_sql }}"
+   #positional_args:
+   #- 1
+  become_user: postgres
+
+- name: "Borrar .sql del servidor"
+  file:
+    path: "{{ ruta_sql }}"
+    state: absent
+  #become_user: postgres
+# tasks file for import

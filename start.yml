@@ -1,0 +1,6 @@
+---
+- name: "Importar un archivo .sql a un servidor de base de datos"
+  hosts: server
+  become: yes
+  roles:
+          - import
