@@ -17,7 +17,7 @@
    path_to_script: "{{ ruta_sql }}"
   become_user: postgres
 
-- name: "Borrar .sql del servidor"
+- name: "Borrar archivo .sql del servidor"
   file:
     path: "{{ ruta_sql }}"
     state: absent
