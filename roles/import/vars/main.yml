@@ -1,4 +1,4 @@
 ---
 nombre_bd: bdprueba1
-from: /tmp/file.sql
+from: ../files/file.sql
 ruta_sql: /tmp/file.sql
